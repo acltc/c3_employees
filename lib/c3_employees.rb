@@ -17,6 +17,12 @@ module C3Employees
       @salary = hash["employee_annual_salary"].to_i
     end
 
+    # API key version:
+    # def self.all(api_key)
+    #   employee_array = Unirest.get("https://data.cityofchicago.org/resource/xzkq-xp2w.json?api_key#{api_key}").body
+    #   generate_employees(employee_array)
+    # end
+
     def self.all
       employee_array = Unirest.get("https://data.cityofchicago.org/resource/xzkq-xp2w.json").body
       generate_employees(employee_array)
